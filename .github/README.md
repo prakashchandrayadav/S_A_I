@@ -14,7 +14,15 @@
 
 ## Documentation
 
+
+
 ToDo
+- [ ] Have the composed docker image delivered to dockerhub
+
+
+Resources
+- https://docs.travis-ci.com/user/docker/
+
 
 ## Credits
 
