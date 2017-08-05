@@ -11,6 +11,29 @@
 
 ## Documentation
 
+Requirements as outlined by @meSingh
+
+- [ ]   PHP >= 7.0.0
+
+- [ ]   OpenSSL PHP Extension
+- [ ]   PDO PHP Extension
+- [ ]   Mbstring PHP Extension
+- [ ]   Tokenizer PHP Extension
+- [ ]   XML PHP Extension
+- [ ]   Mcrypt PHP Extension
+
+
+- [ ]   Memcached 
+- [ ]   Nginx
+- [ ]   Beanstalkd
+- [ ]   Node with Yarn
+
+
+- [ ]   Git 
+    
+- [ ]   PHP Composer
+    
+
 
 
 ToDo

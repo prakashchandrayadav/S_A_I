@@ -10,6 +10,7 @@ services:
 
 env:
   DOCKER_COMPOSE_VERSION: 1.15.0
+  
   matrix:  
 #    - PHP_VERSION=56 BUILD_SERVICE="applications blackfire minio percona nginx caddy apache2 mysql mariadb phpmyadmin postgres postgres-postgis pgadmin neo4j mongo redis"
 #    - PHP_VERSION=70 BUILD_SERVICE="applications blackfire minio percona nginx caddy apache2 mysql mariadb phpmyadmin postgres postgres-postgis pgadmin neo4j mongo redis"
@@ -68,7 +69,8 @@ before_install:
   - docker-compose --version
 
 
-
+after_install:
+  - echo "Hello from after_install"
 
 #deploy:
 #  provider: pages
