@@ -43,6 +43,7 @@ ToDo
 
 Resources
 - https://docs.travis-ci.com/user/docker/
+- http://laradock.io/
 
 
 ## Credits
