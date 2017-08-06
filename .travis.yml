@@ -11,6 +11,7 @@ services:
 env:
   DOCKER_COMPOSE_VERSION: 1.15.0
   
+  - docker-compose up -d memcached nginx beanstalkd 
   matrix:  
 #    - PHP_VERSION=56 BUILD_SERVICE="applications blackfire minio percona nginx caddy apache2 mysql mariadb phpmyadmin postgres postgres-postgis pgadmin neo4j mongo redis"
 #    - PHP_VERSION=70 BUILD_SERVICE="applications blackfire minio percona nginx caddy apache2 mysql mariadb phpmyadmin postgres postgres-postgis pgadmin neo4j mongo redis"
@@ -53,7 +54,6 @@ env:
 #    - HUGO_VERSION=0.20.2
 
 
-  - docker-compose up -d memcached nginx beanstalkd 
 
 # Installing a newer Docker version
 before_install:
