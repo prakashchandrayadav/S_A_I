@@ -53,6 +53,8 @@ env:
 #    - HUGO_VERSION=0.20.2
 
 
+  - docker-compose up -d memcached nginx beanstalkd 
+
 # Installing a newer Docker version
 before_install:
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -71,7 +73,7 @@ before_install:
 
 after_success:
         #  - echo "SUCCESS!!!"
-  - docker-compose up -d memcached nginx beanstalkd 
+  - docker-compose exec workspace bash
 #deploy:
 #  provider: pages
 #  skip_cleanup: true
