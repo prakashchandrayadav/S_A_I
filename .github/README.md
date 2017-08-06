@@ -45,6 +45,8 @@ Resources
 - https://docs.travis-ci.com/user/docker/
 - http://laradock.io/
 - https://docs.travis-ci.com/user/customizing-the-build
-- https://bhavik.io/2016/08/20/travis-ci-docker-image.html
+- https://bhavik.io/2016/08/20/travis-ci-docker-image.
+- https://sebest.github.io/post/using-travis-ci-to-build-docker-images/
+
 ## Credits
 
