@@ -74,8 +74,8 @@ before_install:
   - docker-compose --version
 
 
-after_install:
-  - echo "Hello from after_install"
+after_success:
+  - echo "SUCCESS!!!"
 
 #deploy:
 #  provider: pages
