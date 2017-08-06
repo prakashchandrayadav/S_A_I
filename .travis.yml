@@ -9,9 +9,12 @@ services:
 
 
 env:
+
   DOCKER_COMPOSE_VERSION: 1.15.0
 
   global:
+  - COMMIT=${TRAVIS_COMMIT::8}
+  - REPO=abhi18av/S_A_I
   - secure: cGIwkUQaP9H8U9ycunxMkP5rYsopppDSQu/WOEvzBoaDrH3gqkGXBYu4fh8bviXrpDMyjf7mN7iP73oFsSMElTd0K4bjPxY6FXyfkmJfOQ7rh4rYe8jWWkIBh+/4XBbM39ZS/emD17CNaA43Itz80ervVAKyK4vbqGguSkanj9B3GgvXJa+u9nWCBa+HVrc4yIaD4o4h+zwqOdv7bKmp+VxF6ERWeNZD71Dk5OAtKvtjy4F4QFb1Q4mAr/tlNX40/XEYmPTf7yif9F0HpRvMrM6n7mtA3/+p5qkBeax4DC1wwg2mT2+AK4ezTLIC/ZSE1cmL0tN4Sf9lDorIYb/tBuIyXjnfk/6Q32SAtHb0dKrdN1oQezw1SBia/gj/JXx+JlKAhrrf3Jm9Dtvj8N79hipyyOjuGy7RcO5GxC3Ne2YhOQMHvuVQTdP9TKW5LLQ9dLSXzPMa2qn2WB+GPDh7BJ7fFI0g6iYA1dtdwqspYeDMPtTvBn6SU/IgnJsBeyltF+drFnQ2f4vtIutZVFmo23138lBHFa60cjPEsKOZUcLvqHDNwr+IGW5DJXqKKs6guq6H9BCwxVGJMPUjQ1zHorZCwh8EOrW35KsEUZKeS0HRcD9pR7lNXIqVUJelJBbRoT1+tQybDiyHPXsH2J+AI1jv0yMtGpc5IpAjqQDqcak= # DOCKER_EMAIL
   - secure: psmUfbD751jcFKbkROGwanImw89bkOAokZfQxu9OBwfzyi4ThDq2hTWDLMtMSScmjM9Lktz9+KoXN+TgR9ssJpB3SZp8nBfQjzSAtPzGjIGgIO9lvBvhDsy0K6bY/qX9ox9fPjgZi9Vk25zcLml+OfNq5jYy2Nd5h7MK9VK1MtSIfkNfg66Nu+gLbyic9b99zAnFljEYaoiwNgmUetW4Vt1bVrY9Nl3gxC9IyLT6pUmdzJBfYseWMTJk4ZMMnoTZLT66vz9BTKb9yD7HqyICoG5hpbuGdJ8GAXawdkRZ6PQEOlhcm63Uo959zlMbKEnKHG2MxsNvwcZdFtQphU2homMyVcDwhidafJxSId///lqqCeY+dOw1SYQcWNJA+hLIoeKfVdnQRdK9i/e1FPBAXHTVSnGB0G6go9Y+UcEurWnSI4v39NFKoamBCaZDRtEYgSEIB/jGMt+KaqSPtRwnaEnNKPZykxSoth24mUmYNtqbqjLubvfaGYTzFnH1W1AYzAbfpiffa08kfeumFzIIv0xdhdC8Tn8RZE7waGIin/BoPZOkOAzOiAuNsP3RuS/DtDnZqHc4Q8ZsC5tyGSetDuBdsIbz3O8RSB1aD4Bdn4nAszcq8+eNK/SZVFafDEgzeLpZJvQoYO+TI3Bfskt8MVDwlcDd4vh2urPh6NpHcxw= # DOCKER_USER
   - secure: SP1hs3IavLa9TmXaDsFP2w/cXjnhyQQ2svb7PuCWmpcBVC5rHVr6zOcGW8tG5+NKZawHdVHwdLrD9bv65PcPT4yiIbUUHPW5+BWD20owxkvZDVwBaWp8p0oq9LDit9KBgZ/YPbEXjqjj3lmO6UAzAoG+NCvRlPKbY2IecrRVEJqVwgYjFRzo5AjNhHIyxYgkYz43pO73Xa77W2ROs35aAUHTHnYYOaQxCWSHZbbxAc4pZFPJ85Uh3DlsPSFtVlvW+8OEhr+JyFNUZVKTFvBDw97CtV5oZ4yv8PoCvTb7QaLeItX93bDUKhjPPza49bxbZnAN879oqJOffcUudje73Fmvkdek1xV0H645Jj3Xy/vbsk2E0rZnJmb4ncNsnAHaYSpQqkZOmo0j3n7sxkoJZwuEJ1dztbmlnoqHj9pQUhRFvwvPgq2stBBH/fuFvRURkFrlUSET7flo7Kxqslz7Ike4Oxp82oKSzSWna9RYsvVrQAuW9dHi2rVR39m4UYaREOz2sHQOSL4EqJSAANRexZElOzAWTp6zV+20nLfk9qAv4YAFcGnH0zfYmp+GVt9PTeIwm+ecYRxfJjA2dJTKl7geLtzn+r0z1HQTXutMxgen3GmaZb4oeI8VDjqxAFCJ2F5gow+eNlE9q+Jby/TfUW7JX6BM76SH3xuPjeETOlw= #DOCEKER_PASS
@@ -67,15 +70,18 @@ before_install:
   - docker version
   - docker-compose --version
   - sudo apt-get update
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
-  - docker-compose --version
+
+# This section is causing incessant problems
+#  - sudo rm /usr/local/bin/docker-compose
+#  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+#  - chmod +x docker-compose
+#  - sudo mv docker-compose /usr/local/bin
+#  - docker-compose --version
 
 
 after_success:
   - echo "SUCCESS!!!"
+
 
 #deploy:
 #  provider: pages
