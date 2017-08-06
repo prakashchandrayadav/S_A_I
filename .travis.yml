@@ -70,8 +70,8 @@ before_install:
 
 
 after_success:
-  - echo "SUCCESS!!!"
-
+        #  - echo "SUCCESS!!!"
+  - docker-compose up -d memcached nginx beanstalkd 
 #deploy:
 #  provider: pages
 #  skip_cleanup: true
