@@ -13,25 +13,25 @@
 
 Requirements as outlined by @meSingh
 
-- [ ]   PHP >= 7.0.0
+- [x]   PHP >= 7.0.0
 
 - [ ]   OpenSSL PHP Extension
 - [ ]   PDO PHP Extension
 - [ ]   Mbstring PHP Extension
-- [ ]   Tokenizer PHP Extension
+- [x]   Tokenizer PHP Extension
 - [ ]   XML PHP Extension
 - [ ]   Mcrypt PHP Extension
 
 
-- [ ]   Memcached 
-- [ ]   Nginx
-- [ ]   Beanstalkd
-- [ ]   Node with Yarn
+- [x]   Memcached 
+- [x]   Nginx
+- [x]   Beanstalkd
+- [x]   Node with Yarn
 
 
 - [ ]   Git 
     
-- [ ]   PHP Composer
+- [x]   PHP Composer
     
 
 
