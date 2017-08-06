@@ -25,6 +25,6 @@ before_install:
 - docker-compose --version
 after_success:
 - docker-compose up -d memcached nginx beanstalkd
-- docker-compose exec workspace bash --version
+#- docker-compose exec workspace bash --version
 notifications:
   email: false
