@@ -73,7 +73,7 @@ before_install:
 
 after_success:
         #  - echo "SUCCESS!!!"
-  - docker-compose exec workspace bash
+  - docker-compose exec workspace bash --version
 #deploy:
 #  provider: pages
 #  skip_cleanup: true
