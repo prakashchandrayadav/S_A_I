@@ -32,14 +32,7 @@ http://www.osboxes.org/ubuntu/
 
 ######
 
-Reference
-
-https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04
-
-Install docker-compose latest using 
-
-sudo curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/1.15.0/docker-compose-$(uname -s)-$(uname -m)"
+References
 
 
-sudo chmod +x /usr/local/bin/docker-compose
 
