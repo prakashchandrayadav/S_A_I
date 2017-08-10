@@ -10,8 +10,6 @@ services:
 
 env:
 
-  DOCKER_COMPOSE_VERSION: 1.15.0
-
   global:
   - REPO=abhi18av/S_A_I
   - secure: cGIwkUQaP9H8U9ycunxMkP5rYsopppDSQu/WOEvzBoaDrH3gqkGXBYu4fh8bviXrpDMyjf7mN7iP73oFsSMElTd0K4bjPxY6FXyfkmJfOQ7rh4rYe8jWWkIBh+/4XBbM39ZS/emD17CNaA43Itz80ervVAKyK4vbqGguSkanj9B3GgvXJa+u9nWCBa+HVrc4yIaD4o4h+zwqOdv7bKmp+VxF6ERWeNZD71Dk5OAtKvtjy4F4QFb1Q4mAr/tlNX40/XEYmPTf7yif9F0HpRvMrM6n7mtA3/+p5qkBeax4DC1wwg2mT2+AK4ezTLIC/ZSE1cmL0tN4Sf9lDorIYb/tBuIyXjnfk/6Q32SAtHb0dKrdN1oQezw1SBia/gj/JXx+JlKAhrrf3Jm9Dtvj8N79hipyyOjuGy7RcO5GxC3Ne2YhOQMHvuVQTdP9TKW5LLQ9dLSXzPMa2qn2WB+GPDh7BJ7fFI0g6iYA1dtdwqspYeDMPtTvBn6SU/IgnJsBeyltF+drFnQ2f4vtIutZVFmo23138lBHFa60cjPEsKOZUcLvqHDNwr+IGW5DJXqKKs6guq6H9BCwxVGJMPUjQ1zHorZCwh8EOrW35KsEUZKeS0HRcD9pR7lNXIqVUJelJBbRoT1+tQybDiyHPXsH2J+AI1jv0yMtGpc5IpAjqQDqcak= # DOCKER_EMAIL
@@ -73,19 +71,16 @@ before_install:
   - docker-compose --version
   - sudo apt-get update
 
-# DONE This section is causing incessant problems
   - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - sudo chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
-
-  #- sudo curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/1.15.0/docker-compose-$(uname -s)-$(uname -m)"
-  #- sudo chmod +x /usr/local/bin/docker-compose
+  - sudo curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/1.15.0/docker-compose-$(uname -s)-$(uname -m)"
+  - sudo chmod +x /usr/local/bin/docker-compose
   - docker-compose --version
 
 
 after_success:
-  - echo "SUCCESS!!!"
+  #- echo "SUCCESS!!!"
+
+  # Need to work on this once we have a valid docker image!
   - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
   - export REPO=abhi18av/s_a_i
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
