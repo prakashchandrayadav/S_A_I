@@ -1,0 +1,4 @@
+[submodule "_devNotes/laravel5-3-example"]
+	path = _devNotes/laravel5-3-example
+	url = https://github.com/bestmomo/laravel5-3-example
+	branch = master
