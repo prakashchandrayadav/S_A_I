@@ -29,8 +29,7 @@ Requirements as outlined by @meSingh
 - [x]   Node with Yarn
 
 
-- [ ]   Git 
-    
+- [x]   Git 
 - [x]   PHP Composer
     
 
